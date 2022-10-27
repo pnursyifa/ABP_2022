@@ -39,14 +39,48 @@
         </div>
     </nav>
     <div class="container-fluid konten">
-        <form action="/product/store" method="post">
-            @csrf
-            <label for="">Nama Produk</label>
-            <input type="text" name="nama_product" required>
-            <label for="">Stock Product</label>
-            <input type="number" name="stock">
-            <button type="submit">Save</button>
-        </form>
+        <div class="container">
+            <div class="row" id=judul>
+                <div class="col-sm-8 display-6">Tambah Produk</div>
+                <div class="col-sm-4 text-end align-self-end">
+                    <a href="/product/add" class="btn btn-primary">Tambah</a>
+                </div>
+            </div>
+            <div class="row">
+                <!-- <form action="/product/store" method="post">
+                @csrf
+                    <label for="">Nama Produk</label>
+                    <input type="text" name="nama_product" required>
+                    <label for="">Stock Product</label>
+                    <input type="number" name="stock">
+                    <button type="submit">Save</button>
+                </form> -->
+                <form action="/product/store" method="post">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="nama_product" class="form-label">Nama Produk</label>
+                        <input type="text" class="form-control" id="nama_product" name="nama_product">
+                    </div>
+                    <div class="mb-3">
+                        <label for="harga_produk" class="form-label">Harga Produk</label>
+                        <input type="number" class="form-control" id="harga_product" name="harga_product">
+                    </div>
+                    <div class="mb-3">
+                        <label for="merk" class="form-label">Gudang</label>
+                        <input type="text" class="form-control" id="merk" name="merk">
+                    </div>
+                    <div class="mb-3">
+                        <label for="gudang" class="form-label">Gudang</label>
+                        <input type="text" class="form-control" id="gudang" name="gudang">
+                    </div>
+                    <div class="mb-3">
+                        <label for="stock" class="form-label">Jumlah Stock</label>
+                        <input type="number" class="form-control" id="stock" name="stock">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>

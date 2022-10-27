@@ -38,10 +38,43 @@
                 </ul>
             </div>
         </div>
-        <div class="container-fluid konten">
-
-        </div>
     </nav>
+    <div class="container-fluid konten">
+        <div class="container">
+            <div class="row" id=judul>
+                <div class="col-sm-8 display-6">List Produk</div>
+                <div class="col-sm-4 text-end align-self-end">
+                    <a href="/product/add" class="btn btn-primary">Tambah</a>
+                </div>
+            </div>
+            <div class="row cols-auto" id="tabel">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#id</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Harga</th>
+                            <th scope="col">Stok</th>
+                            <th scope="col">Merk</th>
+                            <th scope="col">Gudang</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">#cthid</th>
+                            <td>cthnama</td>
+                            <td>cthharga</td>
+                            <td>cthstok</td>
+                            <td>cthmerk</td>
+                            <td>cthgudang</td>
+                            <td>cthaksi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
