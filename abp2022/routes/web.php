@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\GudangController;
+use App\Http\Controllers\MerkController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +23,16 @@ use App\Http\Controllers\ProductController;
     return view('welcome');
 }); */
 
-Route::get('/product', [ProductController::class, 'index']);
-Route::get('/product/add', [ProductController::class, 'create']);
+Route::GET('/', [LandingPageController::class, 'index']);
+
+Route::GET('/product', [ProductController::class, 'index']);
+Route::GET('/product/add', [ProductController::class, 'create']);
 Route::POST('/product/store', [ProductController::class, 'store']);
+
+Route::GET('/customer', [CustomerController::class, 'index']);
+
+Route::GET('/gudang', [GudangController::class, 'index']);
+
+Route::GET('/merk', [MerkController::class, 'index']);
+
+Route::GET('/order', [OrderController::class, 'index']);

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-    <title>Tambah Produk - Lesgow Inc.</title>
+    <title>Merk - Lesgow Inc.</title>
 </head>
 <body>
-<nav class="navbar fixed-top" id="nav">
+    <!-- header, otw pisah? -->
+    <nav class="navbar fixed-top" id="nav">
         <div class="container-fluid">
             <div class="navbar-brand logo">
                 Lesgow
@@ -20,13 +21,13 @@
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/product">Produk</a>
+                        <a class="nav-link" href="/product">Produk</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/gudang">Gudang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/merk">Merk</a>
+                        <a class="nav-link active" href="#">Merk</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/customer">Customer</a>
@@ -38,15 +39,5 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid konten">
-        <form action="/product/store" method="post">
-            @csrf
-            <label for="">Nama Produk</label>
-            <input type="text" name="nama_product" required>
-            <label for="">Stock Product</label>
-            <input type="number" name="stock">
-            <button type="submit">Save</button>
-        </form>
-    </div>
 </body>
 </html>

@@ -1,0 +1,45 @@
+.navbar {
+    background-color: #666;
+}
+
+#nav {
+    padding: 0px;
+    height:auto;
+}
+
+.nav .nav-item > a {
+    color: white;
+}
+
+.nav .nav-item > a.active {
+    background-color: #ccc;
+    height: auto;
+}
+
+.logo {
+    color: #CCFF00;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.logo:hover {
+    color: #CCFF00;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#welcome{
+    min-height: 100vh;
+}
+
+#welcome > p {
+    text-align: center;
+    padding-top: 20vh;
+    font-size: 48px;
+}
+
+.konten {
+    padding-top: 64px;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
