@@ -66,7 +66,7 @@
                         <input type="number" class="form-control" id="harga_product" name="harga_product">
                     </div>
                     <div class="mb-3">
-                        <label for="merk" class="form-label">Gudang</label>
+                        <label for="merk" class="form-label">Merk</label>
                         <input type="text" class="form-control" id="merk" name="merk">
                     </div>
                     <div class="mb-3">
