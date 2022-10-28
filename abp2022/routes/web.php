@@ -32,6 +32,8 @@ Route::POST('/product/store', [ProductController::class, 'store']);
 Route::GET('/customer', [CustomerController::class, 'index']);
 
 Route::GET('/gudang', [GudangController::class, 'index']);
+Route::GET('/gudang/add', [GudangController::class, 'create']);
+Route::POST('/gudang/store', [GudangController::class, 'store']);
 
 Route::GET('/merk', [MerkController::class, 'index']);
 

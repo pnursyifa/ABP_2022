@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +24,7 @@
                         <a class="nav-link" href="/product">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Gudang</a>
+                        <a class="nav-link active" href="/gudang">Gudang</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/merk">Merk</a>
@@ -41,40 +42,26 @@
     <div class="container-fluid konten">
         <div class="container">
             <div class="row" id=judul>
-                <div class="col-sm-8 display-6">List Gudang</div>
+                <div class="col-sm-8 display-6">Tambah Gudang</div>
                 <div class="col-sm-4 text-end align-self-end">
-                    <a href="/gudang/add" class="btn btn-primary">Tambah</a>
+                    <a href="/gudang" class="btn btn-primary">Kembali</a>
                 </div>
             </div>
-            <div class="row cols-auto" id="tabel">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#id</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Alamat</th>
-                            <th scope="col">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse($gudang as $key => $data)
-                        <tr>
-                            <th>{{ $data->id}}</th>
-                            <th>{{ $data->nama_gudang}}</th>
-                            <th>{{ $data->alamat_gudang}}</th>
-                            <th>del | edit</th>
-                        </tr>
-                        @empty
-                            <tr><td colspan="4">No record found</td></tr>
-                        @endforelse
-                        <!-- <tr>
-                            <th scope="row">#cthid</th>
-                            <td>cthnama</td>
-                            <td>cthalamat</td>
-                            <td>cthaksi</td>
-                        </tr> -->
-                    </tbody>
-                </table>
+            <div class="row">
+                <div class = "col-4" id="tabel">
+                    <form action="/gudang/store" method="post">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="nama_gudang" class="form-label">Nama Gudang</label>
+                            <input type="text" class="form-control" id="nama_gudang" name="nama_gudang">
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamat_gudang" class="form-label">Alamat Gudang</label>
+                            <input type="text" class="form-control" id="alamat_gudang" name="alamat_gudang">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
