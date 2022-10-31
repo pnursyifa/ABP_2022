@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-    <title>{{ $title }} Gudang - Lesgow Inc.</title>
+    <title>Merk - Lesgow Inc.</title>
 </head>
 <body>
     <!-- header, otw pisah? -->
@@ -24,10 +24,10 @@
                         <a class="nav-link" href="/product">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/gudang">Gudang</a>
+                        <a class="nav-link" href="/gudang">Gudang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/merk">Merk</a>
+                        <a class="nav-link active" href="/merk">Merk</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/customer">Customer</a>
@@ -42,25 +42,20 @@
     <div class="container-fluid konten">
         <div class="container">
             <div class="row" id=judul>
-                <div class="col-sm-8 display-6">{{ $title }} Gudang</div>
+                <div class="col-sm-8 display-6">Tambah Merk</div>
                 <div class="col-sm-4 text-end align-self-end">
-                    <a href="/gudang" class="btn btn-primary">Kembali</a>
+                    <a href="/merk" class="btn btn-primary">Kembali</a>
                 </div>
             </div>
             <div class="row">
                 <div class = "col-4" id="tabel">
-                    <form action="/gudang/{{ $action }}" method="post">
+                    <form action="/merk/store" method="post">
                         @csrf
-                        <input type="hidden" name="_method" value="{{ $method }}" />
                         <div class="mb-3">
-                            <label for="nama_gudang" class="form-label">Nama Gudang</label>
-                            <input type="text" class="form-control" id="nama_gudang" name="nama_gudang" value="{{ isset($d)?$d->nama_gudang:'' }}">
+                            <label for="nama_brand" class="form-label">Nama Merk</label>
+                            <input type="text" class="form-control" id="nama_brand" name="nama_brand">
                         </div>
-                        <div class="mb-3">
-                            <label for="alamat_gudang" class="form-label">Alamat Gudang</label>
-                            <textarea class="form-control" rows="3" id="alamat_gudang" name="alamat_gudang" value="{{ isset($d)?$d->alamat_gudang:'' }}"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">{{ $title }}</button>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
                     </form>
                 </div>
             </div>

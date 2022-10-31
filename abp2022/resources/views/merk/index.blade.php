@@ -39,5 +39,37 @@
             </div>
         </div>
     </nav>
+    <div class="container-fluid konten">
+        <div class="container">
+            <div class="row" id=judul>
+                <div class="col-sm-8 display-6">List Merk</div>
+                <div class="col-sm-4 text-end align-self-end">
+                    <a href="/merk/add" class="btn btn-primary">Tambah</a>
+                </div>
+            </div>
+            <div class="row cols-auto" id="tabel">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" id="colID">#id</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col" id="colAksi">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($brand as $key => $data)
+                        <tr>
+                            <th>{{ $data->id}}</th>
+                            <td>{{ $data->nama_brand}}</td>
+                            <td>del | edit | detail</td>
+                        </tr>
+                        @empty
+                            <tr><td colspan="4">No record found</td></tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -69,10 +69,32 @@ h4 {
     border-color: #8BCD50; */
     color: #8BCD50;
     border-color: #8BCD50;
-    background-color: whitesmoke;
+    background-color: transparent;
 }
 
 .btn-primary:hover {
     background-color: #8BCD50;
     border-color: #8BCD50;
+}
+
+#colID {
+    width: 5%;
+}
+
+#colAksi {
+    width: 12%;
+}
+
+#colDetail {
+    width: 12%;
+}
+
+.btn-secondary {
+    color: #666;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.btn-outline-danger {
+    border-color: transparent;
 }

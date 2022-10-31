@@ -1,12 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\GudangController;
-use App\Http\Controllers\MerkController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\{
+    ProductController,
+    LandingPageController,
+    CustomerController,
+    GudangController,
+    MerkController,
+    OrderController,
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -19,22 +21,18 @@ use App\Http\Controllers\OrderController;
 |
 */
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
-
 Route::GET('/', [LandingPageController::class, 'index']);
 
-Route::GET('/product', [ProductController::class, 'index']);
-Route::GET('/product/add', [ProductController::class, 'create']);
-Route::POST('/product/store', [ProductController::class, 'store']);
+/* Route::resource('/product', ProductController::class); */
+
+Route::resource('product', ProductController::class, ['names' => 'product']);
 
 Route::GET('/customer', [CustomerController::class, 'index']);
 
-Route::GET('/gudang', [GudangController::class, 'index']);
-Route::GET('/gudang/add', [GudangController::class, 'create']);
-Route::POST('/gudang/store', [GudangController::class, 'store']);
+Route::resource('gudang', GudangController::class);
 
 Route::GET('/merk', [MerkController::class, 'index']);
+Route::GET('/merk/add', [MerkController::class, 'create']);
+Route::POST('/merk/store', [MerkController::class, 'store']);
 
 Route::GET('/order', [OrderController::class, 'index']);
