@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
     <title>Customer - Lesgow Inc.</title>
 </head>
 <body>
-    <!-- header, otw pisah? -->
     <nav class="navbar fixed-top" id="nav">
         <div class="container-fluid">
             <div class="navbar-brand logo">
@@ -39,5 +40,49 @@
             </div>
         </div>
     </nav>
+    <div class="container-fluid konten">
+        <div class="container">
+            <div class="row" id=judul>
+                <div class="col-sm-8 display-6">List Customer</div>
+                <div class="col-sm-4 text-end align-self-end">
+                    <a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah</a>
+                </div>
+            </div>
+            <div class="row cols-auto" id="tabel">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" id="colID">#id</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">No HP</th>
+                            <th scope="col" id="colAksi">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($customer as $key => $data)
+                        <tr>
+                            <th>{{ $data->id }}</th>
+                            <td>{{ $data->nama_customer }}</td>
+                            <td>{{ $data->alamat_customer }}</td>
+                            <td>{{ $data->no_hp }}</td>
+                            <td>
+                                <form method="post" action="/customer/{{ $data->id }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-outline-danger btn-sm"><i class="bi bi-dash-square"></i></button>
+                                </form>
+                                <a href="/customer/{{ $data->id }}/edit" class="btn btn-secondary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                <a href="/customer/{{ $data->id }}" class="btn btn-secondary btn-sm"><i class="bi bi-eye-fill"></i></a>
+                            </td>
+                        </tr>
+                        @empty
+                            <tr><td colspan="4">No record found</td></tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

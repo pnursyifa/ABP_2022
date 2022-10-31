@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Product;
-use App\Models\Gudang;
-use App\Models\Brand;
+use App\Models\{
+    Product,
+    Gudang,
+    Brand,
+};
 use DB;
 
 class ProductController extends Controller {

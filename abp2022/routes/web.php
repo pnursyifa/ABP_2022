@@ -23,16 +23,12 @@ use App\Http\Controllers\{
 
 Route::GET('/', [LandingPageController::class, 'index']);
 
-/* Route::resource('/product', ProductController::class); */
-
 Route::resource('product', ProductController::class, ['names' => 'product']);
 
-Route::GET('/customer', [CustomerController::class, 'index']);
+Route::resource('customer', CustomerController::class, ['names' => 'customer']);
 
-Route::resource('gudang', GudangController::class);
+Route::resource('gudang', GudangController::class, ['names' => 'gudang']);
 
-Route::GET('/merk', [MerkController::class, 'index']);
-Route::GET('/merk/add', [MerkController::class, 'create']);
-Route::POST('/merk/store', [MerkController::class, 'store']);
+Route::resource('merk', MerkController::class, ['names' => 'merk']);
 
 Route::GET('/order', [OrderController::class, 'index']);

@@ -45,7 +45,7 @@
             <div class="row" id=judul>
                 <div class="col-sm-8 display-6">List Gudang</div>
                 <div class="col-sm-4 text-end align-self-end">
-                    <a href="/gudang/create" class="btn btn-primary">Tambah</a>
+                    <a href="{{ route('gudang.create') }}" class="btn btn-primary">Tambah</a>
                 </div>
             </div>
             <div class="row cols-auto" id="tabel">
