@@ -66,17 +66,15 @@
                         @forelse($product as $key => $data)
                         <tr>
                             <?php
-                                $arrBrand =  $data->brand()->pluck('nama_brand')->toArray();
-                                $arrGudang = $data->gudang()->pluck('nama_gudang')->toArray();
-                                $brand = implode("", $arrBrand);
-                                $gudang = implode("", $arrGudang);
+                                $arrBrand =  $data->brand()->pluck('nama_brand');
+                                $arrGudang = $data->gudang()->pluck('nama_gudang');
                             ?>
                             <th>{{ $data->id}}</th>
                             <td>{{ $data->nama_product}}</td>
                             <td>{{ $data->harga_product}}</td>
                             <td>{{ $data->stock}}</td>
-                            <td>{{ $brand }}</td>
-                            <td>{{ $gudang }}</td>
+                            <td>{{ $arrBrand[0] }}</td>
+                            <td>{{ $arrGudang[0] }}</td>
                             <td>
                                 <form method="post" action="{{ route('product.show', ['product' => $data]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
                                 @csrf

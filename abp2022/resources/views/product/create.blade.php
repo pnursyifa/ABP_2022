@@ -53,33 +53,33 @@
                         <input type="hidden" name="_method" value="{{ $method }}" />
                         <div class="mb-3">
                             <label for="nama_product" class="form-label">Nama Produk</label>
-                            <input type="text" class="form-control" id="nama_product" name="nama_product" value="{{ isset($d)?$d->nama_product:'' }}">
+                            <input type="text" class="form-control" id="nama_product" name="nama_product" value="{{ isset($data_product)?$data_product->nama_product:'' }}">
                         </div>
                         <div class="mb-3">
                             <label for="harga_produk" class="form-label">Harga Produk</label>
-                            <input type="number" class="form-control" id="harga_product" name="harga_product" value="{{ isset($d)?$d->harga_product:''}}">
+                            <input type="number" class="form-control" id="harga_product" name="harga_product" value="{{ isset($data_product)?$data_product->harga_product:''}}">
                         </div>
                         <div class="mb-3">
                             <label for="merk" class="form-label">Merk</label>
                             <select class="form-select" aria-label="Default select example" id="merk" name="merk">
-                                <option value="{{ isset($d)?$d->brand_id:''}}" selected disabled>Pilih Merk...</option>
+                                <option value="{{ isset($data_product)?$data_product->brand_id:''}}" selected disabled>Pilih Merk...</option>
                                 @foreach ($brand as $key => $data)
-                                    <option value="{{ $data->id }}">{{ $data->nama_brand }}</option>
+                                    <option value="{{ $data->id }}" {{ isset($d)?'selected':'' }}>{{ $data->nama_brand }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="gudang" class="form-label">Gudang</label>
                             <select class="form-select" aria-label="Default select example" id="gudang" name="gudang">
-                                <option value="{{ isset($d)?$d->gudang_id:''}}" selected disabled>Pilih Gudang...</option>
+                                <option value="{{ isset($data_product)?$data_product->gudang_id:''}}" selected disabled>Pilih Gudang...</option>
                                 @foreach ($gudang as $key => $data)
-                                    <option value="{{ $data->id }}">{{ $data->nama_gudang }}</option>
+                                    <option value="{{ $data->id }}" {{ isset($d)?'selected':'' }}>{{ $data->nama_gudang }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="stock" class="form-label">Jumlah Stock</label>
-                            <input type="number" class="form-control" id="stock" name="stock" value="{{ isset($d)?$d->stock:''}}">
+                            <input type="number" class="form-control" id="stock" name="stock" value="{{ isset($data_product)?$data_product->stock:''}}">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

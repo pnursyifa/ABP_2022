@@ -53,11 +53,11 @@
                         <input type="hidden" name="_method" value="{{ $method }}" />
                         <div class="mb-3">
                             <label for="nama_gudang" class="form-label">Nama Gudang</label>
-                            <input type="text" class="form-control" id="nama_gudang" name="nama_gudang" value="{{ isset($d)?$d->nama_gudang:'' }}">
+                            <input type="text" class="form-control" id="nama_gudang" name="nama_gudang" value="{{ isset($data_gudang)?$data_gudang->nama_gudang:'' }}">
                         </div>
                         <div class="mb-3">
                             <label for="alamat_gudang" class="form-label">Alamat Gudang</label>
-                            <textarea class="form-control" rows="3" id="alamat_gudang" name="alamat_gudang" value="{{ isset($d)?$d->alamat_gudang:'' }}"></textarea>
+                            <textarea class="form-control" rows="3" id="alamat_gudang" name="alamat_gudang" value="{{ isset($data_gudang)?$data_gudang->alamat_gudang:'' }}">{{ isset($data_gudang)?$data_gudang->alamat_gudang:'' }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

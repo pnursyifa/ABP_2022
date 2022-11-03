@@ -22,11 +22,11 @@ class GudangController extends Controller
     public function show($id) {
     
         $product_gudang = Product::where('gudang_id', $id)->get();
-        $totalStock = Product::where('gudang_id', $id)->sum('stock');
+        $total_stock = Product::where('gudang_id', $id)->sum('stock');
 
-        return view("gudang.show", ['d' => Gudang::findorFail($id),
+        return view("gudang.show", ['data_gudang' => Gudang::findorFail($id),
                                     'product_gudang' => $product_gudang,
-                                    'totalStock' => $totalStock]);
+                                    'total_stock' => $total_stock]);
     }
 
     public function create(){
@@ -49,7 +49,7 @@ class GudangController extends Controller
         return view('gudang.create', ['title' => 'Edit',
                                       'method'=> 'PUT',
                                       'action'=> "/gudang/$id",
-                                      'd'     => Gudang::findOrFail($id)]);
+                                      'data_gudang'     => Gudang::findOrFail($id)]);
     }
 
     public function update(Request $req, $id){

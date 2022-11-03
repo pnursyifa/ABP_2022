@@ -63,7 +63,7 @@ class ProductController extends Controller {
                                         'title' => 'Edit',
                                         'method'=> 'PUT',
                                         'action'=> "/product/$id",
-                                        'd' => Product::findOrFail($id)]);
+                                        'data_product' => Product::findOrFail($id)]);
     }
 
     public function update(Request $req, $id) {

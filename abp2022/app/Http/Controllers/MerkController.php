@@ -47,7 +47,7 @@ class MerkController extends Controller
         return view('merk.create', ['title' => 'Edit',
                                     'method' => 'PUT',
                                     'action' => "/merk/$id",
-                                    'd' => Brand::findOrFail($id)]);
+                                    'data_merk' => Brand::findOrFail($id)]);
     }
 
     public function update(Request $req, $id){

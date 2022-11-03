@@ -57,25 +57,25 @@
                     <thead>
                         <tr>
                             <th scope="col" id="colDetail">Nama</th>
-                            <td scope="col">{{ $d->nama_gudang }}</th>
+                            <td scope="col">{{ $data_gudang->nama_gudang }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th>Alamat</th>
-                            <td>{{ $d->alamat_gudang }}</td>
+                            <td>{{ $data_gudang->alamat_gudang }}</td>
                         </tr>
                         <tr>
                             <th>Total Stok</th>
-                            <td>{{ $totalStock }}</td>
+                            <td>{{ $total_stock }}</td>
                         </tr>
                         <tr>
                             <th>Created at</th>
-                            <td>{{ $d->created_at }}</td>
+                            <td>{{ $data_gudang->created_at }}</td>
                         </tr>
                         <tr>
                             <th>Last updated at</th>
-                            <td>{{ $d->updated_at }}</td>
+                            <td>{{ $data_gudang->updated_at }}</td>
                         </tr>
                     </tbody>
                 </table>
