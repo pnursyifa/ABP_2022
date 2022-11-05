@@ -19,7 +19,7 @@ class CustomerController extends Controller
     }
 
     public function show($id) {
-        return view("customer.show", ['d' => Customer::findOrFail($id)]);
+        return view("customer.show", ['data_customer' => Customer::findOrFail($id)]);
     }
 
     public function create() {
@@ -42,7 +42,7 @@ class CustomerController extends Controller
         return view('customer.create', ['title' => 'Edit',
                                         'method'=> 'PUT',
                                         'action'=> "/customer/$id",
-                                        'd'     => Customer::findOrFail($id)]);
+                                        'data_customer' => Customer::findOrFail($id)]);
     }
 
     public function update(Request $req, $id){

@@ -20,12 +20,12 @@ class MerkController extends Controller
 
     public function show($id) {
         
-        $totalProduct = Product::where('brand_id', $id)->sum('stock');
-        $totalGudang = Product::where('brand_id', $id)->count('gudang_id');
+        $total_product = Product::where('brand_id', $id)->sum('stock');
+        $total_gudang = Product::where('brand_id', $id)->count('gudang_id');
 
-        return view("merk.show", ['d' => Brand::findOrFail($id),
-                                 'totalProduct' => $totalProduct,
-                                 'totalGudang' => $totalGudang]);
+        return view("merk.show", ['data_brand' => Brand::findOrFail($id),
+                                 'total_product' => $total_product,
+                                 'total_gudang' => $total_gudang]);
     }
 
     public function create(){
@@ -47,7 +47,7 @@ class MerkController extends Controller
         return view('merk.create', ['title' => 'Edit',
                                     'method' => 'PUT',
                                     'action' => "/merk/$id",
-                                    'data_merk' => Brand::findOrFail($id)]);
+                                    'data_brand' => Brand::findOrFail($id)]);
     }
 
     public function update(Request $req, $id){

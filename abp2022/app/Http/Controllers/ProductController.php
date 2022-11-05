@@ -22,7 +22,7 @@ class ProductController extends Controller {
         $product = Product::all();
 
         return view("product.show", ['product' => $product,
-                                     'd' => Product::findOrFail($id)]);
+                                     'data_product' => Product::findOrFail($id)]);
     }
 
     public function create(){

@@ -55,15 +55,15 @@
                         <input type="hidden" name="_method" value="{{ $method }}" />
                         <div class="mb-3">
                             <label for="nama_customer" class="form-label">Nama Customer</label>
-                            <input type="text" class="form-control" id="nama_customer" name="nama_customer" value="{{ isset($d)?$d->nama_customer:'' }}">
+                            <input type="text" class="form-control" id="nama_customer" name="nama_customer" value="{{ isset($data_customer)?$data_customer->nama_customer:'' }}">
                         </div>
                         <div class="mb-3">
                             <label for="alamat_customer" class="form-label">Alamat Customer</label>
-                            <textarea class="form-control" rows="3" id="alamat_customer" name="alamat_customer" value="{{ isset($d)?$d->alamat_customer:'' }}"></textarea>
+                            <textarea class="form-control" rows="3" id="alamat_customer" name="alamat_customer" value="{{ isset($data_customer)?$data_customer->alamat_customer:'' }}">{{ isset($data_customer)?$data_customer->alamat_customer:'' }}</textarea>
                         </div>
                         <div class="mb-3">
                             <label for="no_hp" class="form-label">Nomor HP</label>
-                            <input type="text" class="form-control" rows="3" id="no_hp" name="no_hp" value="{{ isset($d)?$d->no_hp:'' }}">
+                            <input type="text" class="form-control" rows="3" id="no_hp" name="no_hp" value="{{ isset($data_customer)?$data_customer->no_hp:'' }}">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

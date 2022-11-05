@@ -44,8 +44,8 @@
             <div class="row" id=judul>
                 <div class="col-sm-8 display-6">Detail Gudang</div>
                 <div class="col-sm-4 text-end align-self-end">
-                    <a href="{{ route('gudang.edit', ['gudang' => $d]) }}" class="btn btn-primary">Edit</a>
-                    <form method="post" action="{{ route('gudang.show', ['gudang' => $d]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
+                    <a href="{{ route('gudang.edit', ['gudang' => $data_gudang]) }}" class="btn btn-primary">Edit</a>
+                    <form method="post" action="{{ route('gudang.show', ['gudang' => $data_gudang]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger">&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;</button>
@@ -83,7 +83,7 @@
         </div>
         <div class="container">
             <div class="lead" id="judul2">
-                List Produk di Gudang {{ $d->nama_gudang }}
+                List Produk di Gudang {{ $data_gudang->nama_gudang }}
             </div>
             <div class="row cols-auto" id="tabel">
                 <table class="table table-hover">
@@ -98,15 +98,14 @@
                     <tbody>
                         @forelse($product_gudang as $key => $data)
                         <?php
-                            $arrBrand =  $data->brand()->pluck('nama_brand')->toArray();
-                            $brand = implode("", $arrBrand);
+                            $arr_brand =  $data->brand()->pluck('nama_brand')->toArray();
                         ?>
                         <tr>
                             <th>{{ $data->id }}</th>
                             <td>{{ $data->nama_product }}</td>
                             <td>{{ $data->harga_product }}</td>
                             <td>{{ $data->stock }}</td>
-                            <td>{{ $brand }}</td>
+                            <td>{{ $arr_brand[0] }}</td>
                         </tr>
                         @empty
                             <tr><td colspan="4">No record found</td></tr>

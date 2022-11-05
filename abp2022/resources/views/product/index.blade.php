@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Produk - Lesgow Inc.</title>
 </head>
 <body>
@@ -66,15 +67,15 @@
                         @forelse($product as $key => $data)
                         <tr>
                             <?php
-                                $arrBrand =  $data->brand()->pluck('nama_brand');
-                                $arrGudang = $data->gudang()->pluck('nama_gudang');
+                                $arr_brand =  $data->brand()->pluck('nama_brand');
+                                $arr_gudang = $data->gudang()->pluck('nama_gudang');
                             ?>
                             <th>{{ $data->id}}</th>
                             <td>{{ $data->nama_product}}</td>
                             <td>{{ $data->harga_product}}</td>
                             <td>{{ $data->stock}}</td>
-                            <td>{{ $arrBrand[0] }}</td>
-                            <td>{{ $arrGudang[0] }}</td>
+                            <td>{{ $arr_brand[0] }}</td>
+                            <td>{{ $arr_gudang[0] }}</td>
                             <td>
                                 <form method="post" action="{{ route('product.show', ['product' => $data]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
                                 @csrf

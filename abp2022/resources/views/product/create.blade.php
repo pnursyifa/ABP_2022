@@ -64,7 +64,7 @@
                             <select class="form-select" aria-label="Default select example" id="merk" name="merk">
                                 <option value="{{ isset($data_product)?$data_product->brand_id:''}}" selected disabled>Pilih Merk...</option>
                                 @foreach ($brand as $key => $data)
-                                    <option value="{{ $data->id }}" {{ isset($d)?'selected':'' }}>{{ $data->nama_brand }}</option>
+                                    <option value="{{ $data->id }}" {{ isset($data_product)?'selected':'' }}>{{ $data->nama_brand }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -73,7 +73,7 @@
                             <select class="form-select" aria-label="Default select example" id="gudang" name="gudang">
                                 <option value="{{ isset($data_product)?$data_product->gudang_id:''}}" selected disabled>Pilih Gudang...</option>
                                 @foreach ($gudang as $key => $data)
-                                    <option value="{{ $data->id }}" {{ isset($d)?'selected':'' }}>{{ $data->nama_gudang }}</option>
+                                    <option value="{{ $data->id }}" {{ isset($data_product)?'selected':'' }}>{{ $data->nama_gudang }}</option>
                                 @endforeach
                             </select>
                         </div>

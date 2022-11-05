@@ -45,8 +45,8 @@
             <div class="row" id=judul>
                 <div class="col-sm-8 display-6">Detail Customer</div>
                 <div class="col-sm-4 text-end align-self-end">
-                    <a href="{{ route('customer.edit', ['customer' => $d]) }}" class="btn btn-primary">Edit</a>
-                    <form method="post" action="{{ route('customer.show', ['customer' => $d]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
+                    <a href="{{ route('customer.edit', ['customer' => $data_customer]) }}" class="btn btn-primary">Edit</a>
+                    <form method="post" action="{{ route('customer.show', ['customer' => $data_customer]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger">&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;</button>
@@ -58,25 +58,25 @@
                     <thead>
                         <tr>
                             <th scope="col" id="colDetail">Nama</th>
-                            <td scope="col">{{ $d->nama_customer }}</th>
+                            <td scope="col">{{ $data_customer->nama_customer }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th>Alamat</th>
-                            <td>{{ $d->alamat_customer }}</td>
+                            <td>{{ $data_customer->alamat_customer }}</td>
                         </tr>
                         <tr>
                             <th>Nomor HP</th>
-                            <td>{{ $d->no_hp }}</td>
+                            <td>{{ $data_customer->no_hp }}</td>
                         </tr>
                         <tr>
                             <th>Created at</th>
-                            <td>{{ $d->created_at }}</td>
+                            <td>{{ $data_customer->created_at }}</td>
                         </tr>
                         <tr>
                             <th>Last updated at</th>
-                            <td>{{ $d->updated_at }}</td>
+                            <td>{{ $data_customer->updated_at }}</td>
                         </tr>
                     </tbody>
                 </table>

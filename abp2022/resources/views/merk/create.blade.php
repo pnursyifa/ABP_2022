@@ -55,7 +55,7 @@
                         <input type="hidden" name="_method" value="{{ $method }}" />
                         <div class="mb-3">
                             <label for="nama_brand" class="form-label">Nama Merk</label>
-                            <input type="text" class="form-control" id="nama_brand" name="nama_brand" value="{{ isset($data_merk)?$data_merk->nama_brand:'' }}">
+                            <input type="text" class="form-control" id="nama_brand" name="nama_brand" value="{{ isset($data_brand)?$data_brand->nama_brand:'' }}">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

@@ -46,7 +46,7 @@
                 <div class="col-sm-8 display-6">Detail Produk</div>
                 <div class="col-sm-4 text-end align-self-end">
                     <a href="{{ route('product.edit', ['product' => $d]) }}" class="btn btn-primary">Edit</a>
-                        <form method="post" action="{{ route('product.show', ['product' => $d]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
+                        <form method="post" action="{{ route('product.show', ['product' => $data_product]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger"><i class="bi bi-dash"></i></button>
@@ -57,40 +57,38 @@
                 <table class="table">
                     <thead>
                         <?php
-                            $arrBrand =  $d->brand()->pluck('nama_brand')->toArray();
-                            $arrGudang = $d->gudang()->pluck('nama_gudang')->toArray();
-                            $brand = implode("", $arrBrand);
-                            $gudang = implode("", $arrGudang);
+                            $arr_brand =  $d->brand()->pluck('nama_brand')->toArray();
+                            $arr_gudang = $d->gudang()->pluck('nama_gudang')->toArray();
                         ?>
                         <tr>
                             <th scope="col" id="colDetail">Nama</th>
-                            <td scope="col">{{ $d->nama_product }}</th>
+                            <td scope="col">{{ $data_product->nama_product }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th>Harga</th>
-                            <td>{{ $d->harga_product }}</td>
+                            <td>{{ $data_product->harga_product }}</td>
                         </tr>
                         <tr>
                             <th>Stok</th>
-                            <td>{{ $d->stock }}</td>
+                            <td>{{ $data_product->stock }}</td>
                         </tr>
                         <tr>
                             <th>Merk</th>
-                            <td>{{ $brand }}</td>
+                            <td>{{ $arr_brand[0] }}</td>
                         </tr>
                         <tr>
                             <th>Gudang</th>
-                            <td>{{ $gudang }}</td>
+                            <td>{{ $arr_gudang[0] }}</td>
                         </tr>
                         <tr>
                             <th>Created at</th>
-                            <td>{{ $d->created_at }}</td>
+                            <td>{{ $data_product->created_at }}</td>
                         </tr>
                         <tr>
                             <th>Last updated at</th>
-                            <td>{{ $d->updated_at }}</td>
+                            <td>{{ $data_product->updated_at }}</td>
                         </tr>
                     </tbody>
                 </table>

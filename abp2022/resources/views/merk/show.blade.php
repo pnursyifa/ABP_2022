@@ -46,7 +46,7 @@
                 <div class="col-sm-8 display-6">Detail Brand</div>
                 <div class="col-sm-4 text-end align-self-end">
                     <a href="{{ route('merk.edit', ['merk' => $d]) }}" class="btn btn-primary">Edit</a>
-                    <form method="post" action="{{ route('merk.show', ['merk' => $d]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
+                    <form method="post" action="{{ route('merk.show', ['merk' => $data_brand]) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger">&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;</button>
@@ -58,25 +58,25 @@
                     <thead>
                         <tr>
                             <th scope="col" id="colDetail">Nama</th>
-                            <td scope="col">{{ $d->nama_brand }}</th>
+                            <td scope="col">{{ $data_brand->nama_brand }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th>Total Produk</th>
-                            <td>{{ $totalProduct }}</td>
+                            <td>{{ $total_product }}</td>
                         </tr>
                         <tr>
                             <th>Total Gudang</th>
-                            <td>{{ $totalGudang }}</td>
+                            <td>{{ $total_gudang }}</td>
                         </tr>
                         <tr>
                             <th>Created at</th>
-                            <td>{{ $d->created_at }}</td>
+                            <td>{{ $data_brand->created_at }}</td>
                         </tr>
                         <tr>
                             <th>Last updated at</th>
-                            <td>{{ $d->updated_at }}</td>
+                            <td>{{ $data_brand->updated_at }}</td>
                         </tr>
                     </tbody>
                 </table>
